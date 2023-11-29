@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/seniorsconnect.github.io/static/css/main.f855e6bc.css",
-    "main.js": "/seniorsconnect.github.io/static/js/main.de0f1474.js",
+    "main.js": "/seniorsconnect.github.io/static/js/main.e8c01d71.js",
     "static/js/787.68c646fc.chunk.js": "/seniorsconnect.github.io/static/js/787.68c646fc.chunk.js",
     "static/media/logo.svg": "/seniorsconnect.github.io/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/seniorsconnect.github.io/index.html",
     "main.f855e6bc.css.map": "/seniorsconnect.github.io/static/css/main.f855e6bc.css.map",
-    "main.de0f1474.js.map": "/seniorsconnect.github.io/static/js/main.de0f1474.js.map",
+    "main.e8c01d71.js.map": "/seniorsconnect.github.io/static/js/main.e8c01d71.js.map",
     "787.68c646fc.chunk.js.map": "/seniorsconnect.github.io/static/js/787.68c646fc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.de0f1474.js"
+    "static/js/main.e8c01d71.js"
   ]
 }
