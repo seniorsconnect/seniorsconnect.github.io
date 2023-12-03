@@ -63,15 +63,41 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const endpoint = isRegistering ? '/register' : '/login';
-    const response = await fetch(`http://localhost:3001${endpoint}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ username, password }),
-    });
-    // Handle the response
-  };
+    const url = `http://localhost:3001${endpoint}`;
+  
+    try {
+      // Using fetch
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+      // const data = await response.json();
+      console.log(response);
+  
+      if (response.ok) {
+        console.log(response);
+        // Successful response handling
+        // alert(data.message || 'Success!'); // Replace with a more user-friendly approach
+        // For instance, redirect to a different page or update the UI accordingly
+      } else {
+        // Unsuccessful response handling
+        // alert(data.error || 'An error occurred'); // Replace with a more user-friendly approach
+        // Update the UI to show the error message
+        console.log("oopsies");
+      }
+    } catch (error) {
+      console.log("oops");
+      // Network error handling
+      alert('Network error, please try again later.'); // Replace with a more user-friendly approach
+      // Update the UI to inform the user of the network error
+    }
+  };  
+
+
+  
 
   return (
     
