@@ -29,3 +29,15 @@ This will commit the files that you added using git add . before. Use the messag
 ### `git push`
 
 This is the final step to updating the master branch. Pushes all the files you added and commited to the repo.
+
+# RUNNING THE BACKEND (for users only for now)
+
+First you want to open a new terminal so you don't mess with the one 
+
+### `cd backend`
+
+This will put you in the directory for the backend folder.
+
+### `node server.js`
+
+This will start running the backend on localhost port 3001.
