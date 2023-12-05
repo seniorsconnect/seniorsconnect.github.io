@@ -56,8 +56,8 @@ const EventListPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [events, setEvents] = useState([
     // Include date and time in the event data
-    { id: 1, name: "Event 1", date: "2023-07-01", time: "18:00", distance: "5km", icon: "path-to-icon-1.jpg" },
-    { id: 2, name: "Event 2", date: "2023-07-10", time: "20:00", distance: "10km", icon: "path-to-icon-2.jpg" },
+    { id: 1, name: "Event 1", date: "2023-07-01", time: "18:00", distance: "5.1mi", icon: "path-to-icon-1.jpg" },
+    { id: 2, name: "Event 2", date: "2023-07-10", time: "20:00", distance: "10.2mi", icon: "path-to-icon-2.jpg" },
     // ... more events
   ]);
 
