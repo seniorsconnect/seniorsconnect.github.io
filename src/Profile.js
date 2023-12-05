@@ -47,7 +47,7 @@ const Profile = () => {
       <img src="tom_cruise3.jpg" alt="Profile"></img>
       <Name>Tom Cruise</Name>
       <Info>Age: 61</Info>
-      <Info>Residence: 1111 Calle Vista Dr Beverly Hills CA 90210</Info>
+      <Info>Beverly Hills, CA</Info>
       <Info>Hobbies: Acting, Stunt Work, Performing very hard missions</Info>
       <Button>
         Friends
