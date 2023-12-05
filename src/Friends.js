@@ -54,7 +54,7 @@ const BackButton = styled.button`
 `;
 
 // Friends Page Component
-const FriendsPage = () => {
+const Friends = () => {
   const navigate = useNavigate();
 
   const friends = [
@@ -78,4 +78,4 @@ const FriendsPage = () => {
   );
 };
 
-export default FriendsPage;
+export default Friends;

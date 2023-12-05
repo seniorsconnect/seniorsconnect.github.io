@@ -1,6 +1,8 @@
 // Importing necessary modules
 import styled from '@emotion/styled';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 // Styled components
 const ProfileContainer = styled.div`
@@ -41,18 +43,18 @@ const Button = styled.button`
 
 // Profile Page Component
 const Profile = () => {
+  const navigate = useNavigate();
   return (
     <ProfileContainer>
       <ProfilePicture src="./tom_cruise3.jpg" alt="Profile" />
-      <img src="tom_cruise3.jpg" alt="Profile"></img>
       <Name>Tom Cruise</Name>
       <Info>Age: 61</Info>
       <Info>Beverly Hills, CA</Info>
       <Info>Hobbies: Acting, Stunt Work, Performing very hard missions</Info>
-      <Button>
+      <Button onClick={() => navigate("/friends")}>
         Friends
       </Button>
-      <Button>
+      <Button onClick={() => navigate("/myEvents")}>
         My Events
       </Button>
     </ProfileContainer>

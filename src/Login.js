@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import { useNavigate } from 'react-router-dom'; // Make sure you've installed react-router-dom
 
 const Title = styled.h1`
   margin-bottom: 30px; // Add some space below the title
@@ -59,51 +60,13 @@ const Login = () => {
   const [password, setPassword] = useState('');
 
   const handleToggle = () => setIsRegistering(!isRegistering);
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const endpoint = isRegistering ? '/register' : '/login';
-    const url = `http://localhost:3001${endpoint}`;
-  
-    try {
-      // Using fetch
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
-      // const data = await response.json();
-      console.log(response);
-  
-      if (response.ok) {
-        console.log(response);
-        // Successful response handling
-        // alert(data.message || 'Success!'); // Replace with a more user-friendly approach
-        // For instance, redirect to a different page or update the UI accordingly
-      } else {
-        // Unsuccessful response handling
-        // alert(data.error || 'An error occurred'); // Replace with a more user-friendly approach
-        // Update the UI to show the error message
-        console.log("oopsies");
-      }
-    } catch (error) {
-      console.log("oops");
-      // Network error handling
-      alert('Network error, please try again later.'); // Replace with a more user-friendly approach
-      // Update the UI to inform the user of the network error
-    }
-  };  
-
-
-  
+  const navigate = useNavigate();
 
   return (
     
     <Container>
       <Title>Seniors Connect</Title>
-      <LoginForm onSubmit={handleSubmit}>
+      <LoginForm >
         <Input 
           type="text" 
           placeholder="Username" 
@@ -116,7 +79,9 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button type="submit">{isRegistering ? 'Register' : 'Log In'}</Button>
+        <Button 
+          type="submit" onClick={() => navigate("/profile")}>{isRegistering ? 'Register' : 'Log In'}
+        </Button>
       </LoginForm>
       <ToggleButton onClick={handleToggle}>
         {isRegistering ? 'Already have an account? Log In' : 'Create an account'}
