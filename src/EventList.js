@@ -19,7 +19,11 @@ const SearchBar = styled.input`
 const EventItem = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 15px;
+  border-bottom: 1px solid #ccc; /* Add a horizontal line between friend items */
+  padding-bottom: 10px; /* Add padding below each friend item */
+  width: 60%; /* Make sure the line spans the entire width */
 `;
 
 const EventIcon = styled.img`
@@ -31,6 +35,7 @@ const EventIcon = styled.img`
 
 const EventName = styled.span`
   flex-grow: 1;
+  font-weight: bold;
 `;
 
 const EventDistance = styled.span`
@@ -60,8 +65,9 @@ const EventListPage = () => {
     {
       id: 1,
       name: "Summer Music Festival",
+      icon: "musicicon.png",
       date: "2023-08-15",
-      time: "14:00",
+      time: "2:00 PM",
       distance: "3.2mi",
       category: "Music",
       description: "An outdoor summer music festival featuring a variety of artists and bands.",
@@ -74,8 +80,9 @@ const EventListPage = () => {
     {
       id: 2,
       name: "Local Art Exhibition",
+      icon: "articon.png",
       date: "2023-08-20",
-      time: "10:00",
+      time: "1:00 PM",
       distance: "5.5mi",
       category: "Art",
       description: "Exhibition showcasing local artists with a range of contemporary and traditional artwork.",
@@ -88,8 +95,9 @@ const EventListPage = () => {
     {
       id: 3,
       name: "Charity Run 5K",
+      icon: "sporticon.png",
       date: "2023-09-05",
-      time: "08:00",
+      time: "8:00 AM",
       distance: "10mi",
       category: "Sports",
       description: "A 5K run to raise funds for local charities, suitable for all ages and abilities.",
@@ -102,8 +110,9 @@ const EventListPage = () => {
     {
       id: 4,
       name: "Tech Conference 2023",
+      icon: "chillicon.png",
       date: "2023-09-10",
-      time: "09:00",
+      time: "9:00 AM",
       distance: "12mi",
       category: "Technology",
       description: "Annual tech conference with guest speakers, workshops, and networking opportunities.",
@@ -135,7 +144,7 @@ const EventListPage = () => {
       />
       {filteredEvents.map(event => (
         <EventItem key={event.id}>
-          <EventIcon src={event.icon} alt="Event Icon" />
+          <EventIcon src={event.icon} alt= "event icon"/>
           <EventName>{event.name}</EventName>
           <div>
             <span>{event.date} at {event.time}</span>

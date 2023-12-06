@@ -6,12 +6,18 @@ import { useNavigate } from 'react-router-dom'; // Make sure you've installed re
 // Styled components
 const FriendsContainer = styled.div`
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const FriendItem = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+  border-bottom: 1px solid #ccc; /* Add a horizontal line between friend items */
+  padding-bottom: 10px; /* Add padding below each friend item */
+  width: 30%; /* Make sure the line spans the entire width */
 `;
 
 const FriendPicture = styled.img`
@@ -24,6 +30,7 @@ const FriendPicture = styled.img`
 
 const FriendName = styled.span`
   flex-grow: 1;
+  font-weight: bold;
 `;
 
 const DetailsButton = styled.button`
@@ -59,8 +66,10 @@ const Friends = () => {
 
   const friends = [
     // Replace with actual friend data
-    { name: "Friend 1", picture: "path-to-image-1.jpg" },
-    { name: "Friend 2", picture: "path-to-image-2.jpg" },
+    { name: "Will Smith", picture: "willsmith.png" },
+    { name: "Angelina Jolie", picture: "angelinajolie.png" },
+    { name: "Tom Hanks", picture: "tomhanks.png" },
+    { name: "Vin Diesel", picture: "vindiesel.png" },
     // ... more friends
   ];
 

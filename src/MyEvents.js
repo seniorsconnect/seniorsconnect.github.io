@@ -6,12 +6,19 @@ import { useNavigate } from 'react-router-dom'; // Make sure you've installed re
 // Styled components
 const EventsContainer = styled.div`
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const EventItem = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 15px;
+  border-bottom: 1px solid #ccc; /* Add a horizontal line between friend items */
+  padding-bottom: 10px; /* Add padding below each friend item */
+  width: 50%; /* Make sure the line spans the entire width */
 `;
 
 const EventIcon = styled.img`
@@ -23,10 +30,12 @@ const EventIcon = styled.img`
 
 const EventName = styled.span`
   flex-grow: 1;
+  font-weight: bold;
 `;
 
 const EventButton = styled.button`
   padding: 5px 10px;
+  padding-right: 10px;
   border: none;
   border-radius: 5px;
   margin-left: 5px;
@@ -59,8 +68,8 @@ const MyEventsPage = () => {
 
   const [events, setEvents] = useState([
     // Include date and time in the event data
-    { id: 1, name: "Event 1", date: "2023-07-01", time: "18:00", icon: "path-to-icon-1.jpg" },
-    { id: 2, name: "Event 2", date: "2023-07-10", time: "20:00", icon: "path-to-icon-2.jpg" },
+    { id: 1, name: "Golf Outing", date: "2023-07-01", time: "6:00 PM", icon: "sporticon.png" },
+    { id: 2, name: "Bingo", date: "2023-07-10", time: "2:30 PM", icon: "gameicon.png" },
     // ... more events
   ]);
 

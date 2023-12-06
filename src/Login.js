@@ -58,6 +58,11 @@ const Login = () => {
   const [isRegistering, setIsRegistering] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [age, setAge] = useState('');
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
 
   const handleToggle = () => setIsRegistering(!isRegistering);
   const navigate = useNavigate();
@@ -67,6 +72,40 @@ const Login = () => {
     <Container>
       <Title>Seniors Connect</Title>
       <LoginForm >
+      {isRegistering && (
+          <>
+            <Input
+              type="text"
+              placeholder="First Name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+            <Input
+              type="text"
+              placeholder="Last Name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+            <Input
+              type="number"
+              placeholder="Age"
+              value={age}
+              onChange={(e) => setAge(e.target.value)}
+            />
+            <Input
+              type="text"
+              placeholder="City"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+            />
+            <Input
+              type="text"
+              placeholder="State"
+              value={state}
+              onChange={(e) => setState(e.target.value)}
+            />
+          </>
+        )}
         <Input 
           type="text" 
           placeholder="Username" 

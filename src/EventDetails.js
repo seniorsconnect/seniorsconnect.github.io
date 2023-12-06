@@ -7,6 +7,16 @@ import { useNavigate } from 'react-router-dom'; // Make sure you've installed re
 // Styled components
 const EventDetailsContainer = styled.div`
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const EventInfoContainer = styled.div`
+  border: 3px solid #007bff;
+  border-radius: 5px;
+  padding: 20px;
+  width: 50%; /* Adjust width as needed */
 `;
 
 const EventTitle = styled.h1`
@@ -14,7 +24,7 @@ const EventTitle = styled.h1`
 `;
 
 const EventInfo = styled.p`
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 `;
 
 const AttendanceCheckbox = styled.input`
@@ -62,9 +72,10 @@ console.log(event);
   return (
     <EventDetailsContainer>
       <EventTitle>{event.name}</EventTitle>
-      <EventInfo>Category: {event.category}</EventInfo>
-      <EventInfo>Description: {event.description}</EventInfo>
-      <EventInfo>Address: {event.address}</EventInfo>
+      <EventInfoContainer>
+      <EventInfo><b>Category:</b> {event.category}</EventInfo>
+      <EventInfo><b>Description:</b>  {event.description}</EventInfo>
+      <EventInfo><b>Address:</b>  {event.address}</EventInfo>
       <div>
         <AttendanceCheckbox 
           type="checkbox" 
@@ -74,8 +85,9 @@ console.log(event);
         Attending this event?
       </div>
       <AttendeeCount>
-        Attendees: {attendeeCount}/{event.maxAttendees}
+      <b>Attendees:</b>  {attendeeCount}/{event.maxAttendees}
       </AttendeeCount>
+      </EventInfoContainer>
       <BackButton onClick={() => navigate(-1)}>Back</BackButton>
     </EventDetailsContainer>
   );

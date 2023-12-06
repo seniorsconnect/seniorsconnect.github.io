@@ -25,16 +25,21 @@ const Name = styled.h1`
 
 const Info = styled.p`
   margin: 5px 0;
+  font-weight: bold;
 `;
 
 const Button = styled.button`
   margin: 10px;
   padding: 10px 20px;
+  width: 150px;
   border: none;
   border-radius: 5px;
   background-color: #007bff;
   color: white;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+
 
   &:hover {
     background-color: #0056b3;
