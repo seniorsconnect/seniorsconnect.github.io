@@ -81,11 +81,6 @@ const AddEventPage = ({ addEvent }) => {
     });
   };
 
-  const handleSubmit = () => {
-    addEvent(eventData); // Implement this function to add the event to your events array
-    navigate('/eventList'); // Redirect to the event list page
-  };
-
   const handleCancel = () => {
     navigate(-1); // Go back to the previous page
   };
@@ -98,34 +93,23 @@ const AddEventPage = ({ addEvent }) => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form>
       <Input 
         type="text" 
         placeholder="Event Title" 
-        value={eventData.title} 
-        onChange={e => setEventData({ ...eventData, title: e.target.value })} 
       />
       <TextArea 
         placeholder="Description" 
-        value={eventData.description} 
-        onChange={e => setEventData({ ...eventData, description: e.target.value })} 
       />
-      {/* <Autocomplete onSelect={handlePlaceSelect}> */}
-        <Input 
-          type="text" 
-          placeholder="Location" 
-          value={eventData.location} 
-        />
-      {/* </Autocomplete> */}
       <Input 
+        placeholder="Address" 
+      />
+      <Input 
+        placeholder="Date"
         type="date" 
-        value={eventData.date} 
-        onChange={e => setEventData({ ...eventData, date: e.target.value })} 
       />
       <Input 
         type="time" 
-        value={eventData.time} 
-        onChange={e => setEventData({ ...eventData, time: e.target.value })} 
       />
       <Select 
         options={options} 
@@ -137,21 +121,18 @@ const AddEventPage = ({ addEvent }) => {
         <Label>
           <Input 
             type="checkbox" 
-            checked={eventData.isPublic} 
-            onChange={e => setEventData({ ...eventData, isPublic: e.target.checked })} 
           />
           Public
         </Label>
         <Label>
           <Input 
             type="checkbox" 
-            checked={!eventData.isPublic} 
-            onChange={e => setEventData({ ...eventData, isPublic: !e.target.checked })} 
           />
           Friends Only
         </Label>
       </CheckboxContainer>
-      <Button type="submit">Post Event</Button>
+      <Button>Post Event</Button>
+      <br />
       <Button type="button" onClick={handleCancel}>Cancel</Button>
     </Form>
   );

@@ -14,7 +14,13 @@ const SearchBar = styled.input`
   margin-bottom: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  // center the search box
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 `;
+
 
 const EventItem = styled.div`
   display: flex;
@@ -24,6 +30,9 @@ const EventItem = styled.div`
   border-bottom: 1px solid #ccc; /* Add a horizontal line between friend items */
   padding-bottom: 10px; /* Add padding below each friend item */
   width: 60%; /* Make sure the line spans the entire width */
+  // center the event items
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const EventIcon = styled.img`
