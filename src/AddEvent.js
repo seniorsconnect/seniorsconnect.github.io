@@ -67,6 +67,9 @@ const NavBar = styled.nav`
   justify-content: space-between;
   padding: 10px 20px;
   margin-bottom: 25px;
+  margin-left: 40px;
+  width: 90%;
+  margin-top: 25px;
 `;
 
 const NavTitle = styled.div`
@@ -122,6 +125,16 @@ const AddEventPage = ({ addEvent }) => {
   };
 
   return (
+    <div>
+      <NavBar>
+        <NavTitle>SENIORSCONNECT</NavTitle>
+        <div>
+          <NavButton onClick={() => navigate("/eventList")}>EVENT LIST</NavButton>
+          <NavButton onClick={() => navigate("/eventMap")}>EVENT MAP</NavButton>
+          <NavButton onClick={() => navigate("/profile")}>PROFILE</NavButton>
+          <NavButton onClick={() => navigate("/addEvent")}>ADD EVENT</NavButton>
+        </div>
+      </NavBar>
     <Form>
       <Input 
         type="text" 
@@ -164,6 +177,7 @@ const AddEventPage = ({ addEvent }) => {
       <br />
       <Button type="button" onClick={handleCancel}>Cancel</Button>
     </Form>
+    </div>
   );
 };
 

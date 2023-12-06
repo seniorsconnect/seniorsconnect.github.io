@@ -55,6 +55,7 @@ const NavBar = styled.nav`
   justify-content: space-between;
   padding: 10px 20px;
   margin-bottom: 25px;
+  width: 95%;
 `;
 
 const NavTitle = styled.div`

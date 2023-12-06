@@ -26,6 +26,9 @@ const NavBar = styled.nav`
   justify-content: space-between;
   padding: 10px 20px;
   margin-bottom: 25px;
+  margin-left: 40px;
+  width: 90%;
+  margin-top: 25px;
 `;
 
 const NavTitle = styled.div`
@@ -114,7 +117,7 @@ const goToEventDetails = (event) => {
 };
 
   return (
-    <MapContainer center={center} zoom={13} style={{ height: '800px', width: '100%' }}>
+    <div>
       <NavBar>
         <NavTitle>SENIORSCONNECT</NavTitle>
         <div>
@@ -124,25 +127,27 @@ const goToEventDetails = (event) => {
           <NavButton onClick={() => navigate("/addEvent")}>ADD EVENT</NavButton>
         </div>
       </NavBar>
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      />
-      {events.map(event => (
-        <Marker
-          key={event.id}
-          position={[event.longitude, event.latitude]} // Replace with actual event coordinates
-          icon={blueIcon}
-          eventHandlers={{
-            click: () => {
-              goToEventDetails(event);
-            },
-          }}
-        >
-          <Popup>{event.name}</Popup>
-        </Marker>
-      ))}
-    </MapContainer>
+      <MapContainer center={center} zoom={13} style={{ height: '800px', width: '100%'}}>
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        />
+        {events.map(event => (
+          <Marker
+            key={event.id}
+            position={[event.longitude, event.latitude]} // Replace with actual event coordinates
+            icon={blueIcon}
+            eventHandlers={{
+              click: () => {
+                goToEventDetails(event);
+              },
+            }}
+          >
+            <Popup>{event.name}</Popup>
+          </Marker>
+        ))}
+      </MapContainer>
+    </div>
   );
 };
 
