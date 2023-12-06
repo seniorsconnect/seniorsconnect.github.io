@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -15,6 +16,35 @@ const blueIcon = new L.Icon({
   popupAnchor: [1, -34],
   shadowSize: [41, 41]
 });
+
+// Styled components
+const NavBar = styled.nav`
+  background-color: #9fc5e8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-bottom: 25px;
+`;
+
+const NavTitle = styled.div`
+  font-size: 24px;
+  font-weight: bold;
+`;
+
+const NavButton = styled.button`
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0 10px;
+
+  &:hover {
+    color: #ddd;
+  }
+`;
 
 const EventMap = ({}) => {
   const navigate = useNavigate();
@@ -85,6 +115,15 @@ const goToEventDetails = (event) => {
 
   return (
     <MapContainer center={center} zoom={13} style={{ height: '800px', width: '100%' }}>
+      <NavBar>
+        <NavTitle>SENIORSCONNECT</NavTitle>
+        <div>
+          <NavButton onClick={() => navigate("/eventList")}>EVENT LIST</NavButton>
+          <NavButton onClick={() => navigate("/eventMap")}>EVENT MAP</NavButton>
+          <NavButton onClick={() => navigate("/profile")}>PROFILE</NavButton>
+          <NavButton onClick={() => navigate("/addEvent")}>ADD EVENT</NavButton>
+        </div>
+      </NavBar>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

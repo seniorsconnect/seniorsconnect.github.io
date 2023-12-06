@@ -46,11 +46,57 @@ const Button = styled.button`
   }
 `;
 
+// Styled components
+const NavBar = styled.nav`
+  background-color: #9fc5e8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-bottom: 25px;
+`;
+
+const NavTitle = styled.div`
+  font-size: 24px;
+  font-weight: bold;
+`;
+
+const NavButton = styled.button`
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0 10px;
+
+  &:hover {
+    color: #ddd;
+  }
+`;
+
+// Assuming you'll replace 'IconPlaceholder' with actual icons
+const IconPlaceholder = styled.span`
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #9fc5e8; // Placeholder style, replace with actual icons
+`;
+
 // Profile Page Component
 const Profile = () => {
   const navigate = useNavigate();
   return (
     <ProfileContainer>
+      <NavBar>
+        <NavTitle>SENIORSCONNECT</NavTitle>
+        <div>
+          <NavButton onClick={() => navigate("/eventList")}>EVENT LIST</NavButton>
+          <NavButton onClick={() => navigate("/eventMap")}>EVENT MAP</NavButton>
+          <NavButton onClick={() => navigate("/profile")}>PROFILE</NavButton>
+          <NavButton onClick={() => navigate("/addEvent")}>ADD EVENT</NavButton>
+        </div>
+      </NavBar>
       <ProfilePicture src="./tom_cruise3.jpg" alt="Profile" />
       <Name>Tom Cruise</Name>
       <Info>Age: 61</Info>

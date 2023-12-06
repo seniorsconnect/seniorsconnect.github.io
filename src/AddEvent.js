@@ -58,6 +58,35 @@ const options = [
   { value: 'sports', label: 'Sports' }
 ];
 
+// Styled components
+const NavBar = styled.nav`
+  background-color: #9fc5e8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-bottom: 25px;
+`;
+
+const NavTitle = styled.div`
+  font-size: 24px;
+  font-weight: bold;
+`;
+
+const NavButton = styled.button`
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0 10px;
+
+  &:hover {
+    color: #ddd;
+  }
+`;
+
 // Add Event Page Component
 const AddEventPage = ({ addEvent }) => {
   const navigate = useNavigate();

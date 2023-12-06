@@ -66,6 +66,43 @@ const EventButton = styled.button`
   }
 `;
 
+// Styled components
+const NavBar = styled.nav`
+  background-color: #9fc5e8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-bottom: 25px;
+`;
+
+const NavTitle = styled.div`
+  font-size: 24px;
+  font-weight: bold;
+`;
+
+const NavButton = styled.button`
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0 10px;
+
+  &:hover {
+    color: #ddd;
+  }
+`;
+
+// Assuming you'll replace 'IconPlaceholder' with actual icons
+const IconPlaceholder = styled.span`
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #9fc5e8; // Placeholder style, replace with actual icons
+`;
+
 // EventList Page Component
 const EventListPage = () => {
   const navigate = useNavigate(); // Moved up here
@@ -73,13 +110,13 @@ const EventListPage = () => {
   const [events, setEvents] = useState([
     {
       id: 1,
-      name: "Local Jazz Concert",
+      name: "Summer Music Festival",
       icon: "musicicon.png",
       date: "2023-08-15",
       time: "2:00 PM",
       distance: "3.2mi",
       category: "Music",
-      description: "A laid back concert at a local venue featuring great Jazz artists and bands.",
+      description: "An outdoor summer music festival featuring a variety of artists and bands.",
       numAttending: 150,
       maxAttendees: 200,
       address: "123 Festival Ave, Music City",
@@ -103,13 +140,13 @@ const EventListPage = () => {
     },
     {
       id: 3,
-      name: "Charity Golf Outing",
+      name: "Charity Run 5K",
       icon: "sporticon.png",
       date: "2023-09-05",
       time: "8:00 AM",
       distance: "10mi",
       category: "Sports",
-      description: "A local golf outing to raise funds for local charities, suitable for all ages and abilities.",
+      description: "A 5K run to raise funds for local charities, suitable for all ages and abilities.",
       numAttending: 200,
       maxAttendees: 300,
       address: "789 Charity Rd, Riverside Park",
@@ -118,16 +155,16 @@ const EventListPage = () => {
     },
     {
       id: 4,
-      name: "Ice Cream Social",
+      name: "Tech Conference 2023",
       icon: "chillicon.png",
       date: "2023-09-10",
       time: "9:00 AM",
       distance: "12mi",
-      category: "Chill",
-      description: "Fun event with free ice cream and great people to connect with!",
+      category: "Technology",
+      description: "Annual tech conference with guest speakers, workshops, and networking opportunities.",
       numAttending: 300,
       maxAttendees: 500,
-      address: "101 Social Blvd, Ice Cream City",
+      address: "101 Tech Blvd, Innovation City",
       longitude:34.3872,
       latitude: -118.123
     },
@@ -145,6 +182,15 @@ const EventListPage = () => {
 
   return (
     <EventListContainer>
+      <NavBar>
+        <NavTitle>SENIORSCONNECT</NavTitle>
+        <div>
+          <NavButton onClick={() => navigate("/eventList")}>EVENT LIST</NavButton>
+          <NavButton onClick={() => navigate("/eventMap")}>EVENT MAP</NavButton>
+          <NavButton onClick={() => navigate("/profile")}>PROFILE</NavButton>
+          <NavButton onClick={() => navigate("/addEvent")}>ADD EVENT</NavButton>
+        </div>
+      </NavBar>
       <SearchBar 
         type="text" 
         placeholder="Search events..." 
