@@ -68,8 +68,8 @@ const MyEventsPage = () => {
 
   const [events, setEvents] = useState([
     // Include date and time in the event data
-    { id: 1, name: "Golf Outing", date: "2023-07-01", time: "6:00 PM", icon: "sporticon.png" },
-    { id: 2, name: "Bingo", date: "2023-07-10", time: "2:30 PM", icon: "gameicon.png" },
+    { id: 1, name: "Golf Outing", date: "07/01/2023", time: "6:00 PM", icon: "sporticon.png" },
+    { id: 2, name: "Bingo", date: "07/10/2023", time: "2:30 PM", icon: "gameicon.png" },
     // ... more events
   ]);
 
